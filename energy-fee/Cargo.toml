@@ -1,0 +1,64 @@
+[package]
+name = "pallet-energy-fee"
+version = "0.1.0"
+authors = ["Alpha 4"]
+edition = "2021"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+frame-support = { version = "4.0.0", default-features = false }
+frame-system = { version = "4.0.0", default-features = false }
+pallet-evm = { version = "4.0.0", default-features = false }
+pallet-transaction-payment = { version = "4.0.0", default-features = false }
+parity-scale-codec = { version = "3.0.0", default-features = false }
+scale-info = { version = "2.0.0", default-features = false }
+sp-arithmetic = { version = "4.0.0", default-features = false }
+sp-core = { version = "4.0.0", default-features = false }
+sp-io = { version = "4.0.0", default-features = false }
+sp-runtime = { version = "4.0.0", default-features = false }
+sp-std = { version = "4.0.0", default-features = false }
+vitreus-runtime-common = { version = "0.1.0", default-features = false }
+
+[dev-dependencies]
+pallet-assets = { version = "4.0.0", default-features = false }
+pallet-balances = { version = "4.0.0", default-features = false }
+pallet-ethereum = { version = "4.0.0", default-features = false }
+pallet-reputation = { version = "0.1.0", default-features = false }
+pallet-timestamp = { version = "4.0.0", default-features = false }
+pallet-nfts = { version = "0.1.0", default-features = false }
+frame-benchmarking = { version = "4.0.0", default-features = false }
+ethereum-types = { version = "4.0.0", default-features = false }
+fp-account = { version = "0.1.0", default-features = false }
+pallet-base-fee = { version = "0.1.0", default-features = false }
+
+[features]
+default = ["std"]
+std = [
+    "ethereum-types/std",
+    "fp-account/std",
+    "frame-benchmarking/std",
+    "frame-support/std",
+    "frame-system/std",
+    "pallet-balances/std",
+    "pallet-base-fee/std",
+    "pallet-ethereum/std",
+    "pallet-evm/std",
+    "pallet-nfts/std",
+    "pallet-reputation/std",
+    "pallet-transaction-payment/std",
+    "parity-scale-codec/std",
+    "scale-info/std",
+    "sp-arithmetic/std",
+    "sp-io/std",
+    "sp-runtime/std",
+    "sp-std/std",
+    "vitreus-runtime-common/std",
+]
+runtime-benchmarks = [
+    "frame-benchmarking/runtime-benchmarks",
+    "pallet-assets/runtime-benchmarks",
+    "pallet-ethereum/runtime-benchmarks",
+]
+try-runtime = ["frame-support/try-runtime"]
